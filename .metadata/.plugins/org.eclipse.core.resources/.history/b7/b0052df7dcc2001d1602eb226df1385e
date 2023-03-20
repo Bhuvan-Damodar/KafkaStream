@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        employee-input-channel:
+          destination: employees
+        emp-developer-output-channel:
+          destination: emp_developer
+        emp-tester-output-channel:
+          destination: emp_tester
+      kafka:
+        streams:
+          binder:
+             brokers: localhost:9092
+   
+    
+        
+

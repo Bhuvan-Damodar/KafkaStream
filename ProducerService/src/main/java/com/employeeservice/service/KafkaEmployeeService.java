@@ -1,0 +1,27 @@
+package com.employeeservice.service;
+
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+import com.employeeservice.model.Employee;
+
+import lombok.extern.log4j.Log4j2;
+
+@Service
+@Log4j2
+public class KafkaEmployeeService {
+
+	private static final String TOPIC = "employees";
+
+	@Autowired
+	private KafkaTemplate<String, Employee> kafkaTemplate;
+
+	public void send(Employee employee) {
+		log.info("Employee object is {}", employee);
+		kafkaTemplate.send(TOPIC, UUID.randomUUID().toString(), employee);
+	}
+
+}

@@ -1,0 +1,4 @@
+1678848331954	Rename package 'com.fullstackmaina.producerservice'
+1678848434815	Rename type 'OrderController'
+1678848445188	Rename type 'Order'
+1678848480515	Rename type 'KafkaProducerService'

@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        order-input-channel:
+          destination: employees
+        order-homedelivery-output-channel:
+          destination: emp_developer
+        order-takeaway-output-channel:
+          destination: emp_tester
+      kafka:
+        streams:
+          binder:
+             brokers: localhost:9092
+   
+    
+        
+
